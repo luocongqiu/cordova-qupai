@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-qupai"
+        version="0.0.1">
+
+    <name>QupaiVideo</name>
+    <description>
+        趣拍cordova插件.
+    </description>
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0"/>
+    </engines>
+
+    <js-module src="www/QupaiVideo.js" name="QupaiVideo">
+        <clobbers target="window.plugins.qupaiVideo"/>
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="QupaiVideo">
+                <param name="android-package" value="com.luo.cordova.plugins.qupai.QupaiVideo"/>
+            </feature>
+        </config-file>
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+            <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+            <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+            <uses-permission android:name="android.permission.READ_SETTINGS" />
+            <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+            <uses-permission android:name="android.permission.INTERNET" />
+            <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+            <uses-permission android:name="android.permission.GET_TASKS" />
+        </config-file>
+        <source-file src="src/android/QupaiVideo.java" target-dir="src/com/luo/cordova/plugins/qupai"/>
+        <framework src="src/android/build.gradle" custom="true" type="gradleReference" />
+
+        <resource-file src="src/android/libs/Qupaisdk-release.aar" target="libs/Qupaisdk-release.aar" />
+        <source-file src="src/android/libs/armeabi-v7a/libgnustl_shared.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/armeabi-v7a/libqupai-media-jni.so" target-dir="libs/armeabi-v7a"/>
+        <source-file src="src/android/libs/armeabi-v7a/libqupai-media-thirdparty.so" target-dir="libs/armeabi-v7a"/>
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="QuPaiVideo">
+                <param name="ios-package" value="QuPaiVideo"/>
+            </feature>
+        </config-file>
+        <header-file src="src/ios/QupaiVideo.h"/>
+        <source-file src="src/ios/QupaiVideo.m"/>
+    </platform>
+
+
+</plugin>

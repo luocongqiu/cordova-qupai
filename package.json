@@ -1,0 +1,23 @@
+{
+  "name": "cordova-plugin-qupai",
+  "version": "1.0.0",
+  "description": "cordova qupai plugin",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luocongqiu/cordova-qupai.git"
+  },
+  "keywords": [
+    "cordova",
+    "cordova-android",
+    "cordova-ios",
+    "qupai",
+    "video",
+    "compress",
+    "capture"
+  ],
+  "author": "luocongqiu",
+  "bugs": {
+    "url": "https://github.com/luocongqiu/cordova-qupai/issues"
+  },
+  "homepage": "https://github.com/luocongqiu/cordova-qupai#readme"
+}
